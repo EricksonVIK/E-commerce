@@ -28,3 +28,5 @@ module.exports = {
   Tag,
   ProductTag,
 };
+
+module.exports={Category, Product, Tag, ProductTag}
