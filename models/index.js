@@ -15,18 +15,22 @@ Category.hasMany(Product, {
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
   through: ProductTag,
+  as: 'product_tags',
+});
+
+ProductTag.belongsTo(Product, {
   foreignKey: "product_id",
 });
-// tag is associated to product using an alias. You've included an alias (tag_id), but it does not match the alias(es) defined in your association (tags).
-// Tags belongToMany Products(through ProductTag)
-Tag.belongsToMany(Product, {
-  through: ProductTag,
+
+ProductTag.belongsTo(Tag, {
   foreignKey: "tag_id",
 });
-// Getting this error:
-// tag is associated to product using an alias.
-// You've included an alias (tag_id), but it does not match the alias(es) defined in your association (tags).
-// do i need ProductTag rules to link? 
+
+Tag.belongsToMany(Product, {
+  through: ProductTag,
+  as: "product_tags",
+});
+
 module.exports = {
   Product,
   Category,

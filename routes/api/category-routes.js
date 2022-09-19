@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   console.log("======================");
 
   Category.findAll({
-    attributes: ["id", "category_name"],
+    // attributes: ["id", "category_name"],
     include: [
       {
         model: Product,
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
       },
     ],
     })
-    .then((Category) => res.json(Category))
+    .then(Category => res.json(Category))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
