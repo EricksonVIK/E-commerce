@@ -8,7 +8,7 @@
 
   ## Table of contents
   - [Usage](#usage)
-  - [Contribute](#contribute)
+  - [Sample](#sample)
   - [Contact Infomation](#contact)
   - [License](#license)
 
